@@ -2,7 +2,7 @@ pipeline {
     agent any;
 
     options {
-        buildDiscarder(logRotator(numToKeepStr: '3')) 
+        buildDiscarder(logRotator(numToKeepStr: '2')) 
     }
 
     stages {
@@ -14,7 +14,7 @@ pipeline {
 
          stage('Steps2') {
             steps {
-                sh 'step2'
+                sh 'echo step2'
             }
         }
     }

@@ -1,20 +1,21 @@
+pipeline {
+    agent any;
 
-node {
-    stage('Git Checkout') {
-        sh 'echo checkout'
-        sh 'sleep 10'
+    options {
+        buildDiscarder(logRotator(numToKeepStr: '3')) 
     }
-    stage('Unit Testing') {
-        sh 'echo UT'
-        sh 'sleep 10'
+
+    stages {
+        stage('Git Checkout') {
+            steps {
+                sh 'echo hell workd'
+            }
+        }
+
+         stage('Steps2') {
+            steps {
+                sh 'step2'
+            }
+        }
     }
-    stage('Code Qualaity') {
-        sh 'echo UT'
-        sh 'sleep 10'
-    }
-    stage('Integration') {
-        sh 'echo UT'
-        sh 'sleep 10'
-    }
-    
 }
